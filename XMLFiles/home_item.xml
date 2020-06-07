@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:layout_margin="8dp"
+    android:clipToPadding="true"
+    app:cardCornerRadius="15dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:id="@+id/relative"
+        >
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_launcher" />
+
+
+        <TextView
+            android:id="@+id/text_view_title"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+
+            android:text="Title"
+            android:layout_toRightOf="@id/image_view"
+            android:paddingLeft="10dp"
+            android:layout_alignParentTop="true"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:maxLines="3"/>
+
+
+
+        <TextView
+            android:id="@+id/text_view_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/image_view"
+            android:paddingLeft="10dp"
+            android:text="Time: "
+            android:paddingBottom="5dp"
+            />
+
+        <TextView
+            android:id="@+id/slash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/text_view_time"
+            android:textColor="#5824AD"
+            android:text="|"
+            android:paddingBottom="5dp"/>
+
+        <TextView
+            android:id="@+id/text_view_section"
+            android:layout_width="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/slash"
+            android:layout_height="wrap_content"
+            android:paddingLeft="3dp"
+            android:text="Section: "
+            android:paddingBottom="5dp"/>
+
+        <ImageView
+            android:id="@+id/bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+
+            android:duplicateParentState="true"
+            android:src="@drawable/ic_bookmark_border" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

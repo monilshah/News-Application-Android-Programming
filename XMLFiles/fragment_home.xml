@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swiperefresh_items"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cardViewImg"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/weatherImage"
+                android:src="@drawable/sunny_weather"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:scaleType="fitXY"
+
+                tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Los Angeles"
+                    android:textStyle="bold"
+                    android:textColor="#ffffffff"
+                    android:textSize="28sp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toTopOf="@id/weatherImage"
+                    app:layout_constraintStart_toStartOf="@id/weatherImage"
+                    tools:layout_editor_absoluteX="30dp"
+                    tools:layout_editor_absoluteY="16dp"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/city"
+                    android:layout_marginLeft="40dp"
+                    android:layout_alignLeft="@+id/weatherImage"
+                    app:layout_constraintStart_toStartOf="@id/weatherImage"
+                    android:text="California"
+                    android:textStyle="bold"
+                    android:textColor="#ffffffff"
+                    android:textSize="22sp"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_alignRight="@+id/weatherImage"
+                    app:layout_constraintTop_toBottomOf="@id/temperature"
+                    app:layout_constraintEnd_toEndOf="@id/weatherImage"
+                    android:layout_marginRight="28dp"
+                    android:text="Clouds"
+
+                    android:textColor="#ffffffff"
+                    android:textSize="22sp"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/temperature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="19 \u2103"
+                    android:textStyle="bold"
+                    android:textColor="#ffffffff"
+                    app:layout_constraintStart_toEndOf="@id/city"
+                    app:layout_constraintTop_toTopOf="@id/weatherImage"
+                    android:layout_marginLeft="110dp"
+                    android:layout_marginTop="20dp"
+                    android:textSize="28sp"
+                    tools:layout_editor_absoluteX="262dp"
+                    tools:layout_editor_absoluteY="16dp"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_below="@+id/weatherImage"
+                android:layout_width="match_parent"
+                android:layout_height="550dp"
+                tools:listitem="@layout/home_item"
+                />
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/homeFrame">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/colorPrimary"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/fetchingNews"
+
+            android:layout_width="wrap_content"
+            android:layout_below="@id/progressBar"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Fetching News"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            />
+    </FrameLayout>
+
+
+</RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
